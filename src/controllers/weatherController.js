@@ -18,9 +18,9 @@ const options = {
 
 const findWeather = async (req, res) => {
 
-    let { q, days = 3 } = req.query;
+    let { q, days = 3, dt = '' } = req.query;
 
-    options.params = {...options.params, q, days };
+    options.params = {...options.params, q, days, dt };
 
     try {
         const response = await axios.request(options);
