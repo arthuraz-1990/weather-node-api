@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  node-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: arthuraz1990/weather-node-api:1.0
+    container_name: weather-node-api
+    restart: unless-stopped
+    ports:
+    - '3000:3000'
+    environment:
+      - WEATHERAPI_HOST=${WEATHERAPI_HOST}
+      - ADDRESS_API_HOST=${ADDRESS_API_HOST}
+      - RAPIDAPI_KEY=${RAPIDAPI_KEY}
